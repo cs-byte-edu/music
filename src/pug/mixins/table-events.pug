@@ -14,7 +14,7 @@ mixin table_events(data)
                             td(class = td_item.length > 1 ? 'event-table__td event-table__td_speaker fl-col' : 'event-table__td event-table__td_speaker' role="cell")
                                 each speaker in td_item
                                     .event-table__speaker
-                                        img(src=`@img/jpg/${speaker.img}.jpg` class='event-table__avatar')
+                                        img(src=`@img/jpg/${speaker.img}.jpg` alt=`${speaker.img}` loading="lazy" class='event-table__avatar')
                                         .event-table__speaker-info
                                             p.event-table__td-title=speaker.title
                                             p.event-table__subtitle!=speaker.sub_title

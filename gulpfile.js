@@ -7,7 +7,6 @@ import { processImages } from "./config/tasks/images.js";
 import { processJS } from "./config/tasks/javascript.js";
 import { convertTtfToWoff } from "./config/tasks/fonts.js";
 import { processSCSS } from "./config/tasks/scss.js";
-import { combineCSS } from "./config/tasks/combineCSS.js";
 import { copyFonts } from "./config/tasks/fonts.js";
 import { svgIcons } from "./config/tasks/svg-sprite.js";
 
@@ -57,11 +56,4 @@ const devTask = series(handleClean, mainTask, parallel(watcher, handleServer));
 
 task("default", devTask);
 
-export {
-  processPug,
-  processSCSS,
-  handleImages,
-  svgIcons,
-  convertTtfToWoff,
-  combineCSS,
-};
+export { processPug, processSCSS, handleImages, svgIcons, convertTtfToWoff };
