@@ -1,7 +1,7 @@
-import { existsSync } from 'node:fs';
-import { rm } from 'node:fs/promises';
-import { resolve } from 'node:path';
-import { projectPath } from '../settings.js';
+import { existsSync } from "node:fs";
+import { rm } from "node:fs/promises";
+import { resolve } from "node:path";
+import { projectPath } from "../settings.js";
 
 export const clean = (dirToClean = projectPath.distFolder) => {
   return async (done) => {
