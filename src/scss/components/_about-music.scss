@@ -1,0 +1,132 @@
+@use "../base/variables" as *;
+
+.about-music {
+  position: relative;
+  overflow-x: hidden;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: var(--c-dark-500);
+    @media (min-width: $md) {
+      flex-direction: row;
+    }
+
+    @media (min-width: $lg) {
+      align-items: center;
+      gap: 3.125rem;
+    }
+
+    @media (min-width: $xl) {
+      gap: 4.375rem;
+    }
+  }
+
+  &__media {
+    margin-bottom: 24px;
+    @media (min-width: $md) {
+      margin-right: 35px;
+      margin-bottom: 30px;
+      border-radius: $border-radius-md;
+      background: url("@img/jpg/about-music-back.jpg") no-repeat top left/280px
+        auto;
+    }
+
+    @media (min-width: $lg) {
+      background-size: 460px auto;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        margin-top: -53px;
+        left: -30%;
+        display: block;
+        width: 106px;
+        height: 130px;
+        transform: rotate(5deg);
+        background-image: linear-gradient(90deg, var(--c-sky-blue) 0 8px),
+          linear-gradient(90deg, var(--c-sky-blue) 0 8px),
+          linear-gradient(90deg, var(--c-sky-blue) 0 8px),
+          linear-gradient(90deg, var(--c-sky-blue) 0 8px),
+          linear-gradient(0deg, var(--c-sky-blue) 0 8px),
+          linear-gradient(var(--c-sky-blue) 0 8px),
+          linear-gradient(var(--c-sky-blue) 0 8px),
+          linear-gradient(90deg, var(--c-blue) 0 8px),
+          linear-gradient(90deg, var(--c-blue) 0 8px),
+          linear-gradient(90deg, var(--c-blue) 0 8px),
+          linear-gradient(90deg, var(--c-blue) 0 8px),
+          linear-gradient(var(--c-blue) 0 8px),
+          linear-gradient(var(--c-blue) 0 8px),
+          linear-gradient(var(--c-blue) 0 8px);
+        background-size: 8px 48px, 8px 48px, 8px 48px, 8px 48px, 48px 8px,
+          48px 8px, 48px 8px, 8px 48px, 8px 48px, 8px 48px, 8px 48px, 48px 8px,
+          48px 8px, 48px 8px;
+        background-repeat: no-repeat;
+        background-position: 16px 0, 56px 40px, 96px 80px, 136px 120px,
+          16px 40px, 56px 80px, 96px 120px, 0 16px, 40px 56px, 80px 96px,
+          120px 136px, 0 56px, 40px 96px, 80px 136px;
+      }
+    }
+
+    @media (min-width: $xl) {
+      margin-right: 55px;
+      margin-bottom: 50px;
+      &::before {
+        bottom: -70px;
+        top: auto;
+        left: -45%;
+        width: 160px;
+        height: 182px;
+      }
+    }
+
+    @media (min-width: $xxl) {
+      margin-right: 75px;
+      margin-bottom: 70px;
+    }
+  }
+  &__img {
+    display: block;
+    max-width: 100%;
+    border-radius: $border-radius-md;
+    @media (min-width: $md) {
+      position: relative;
+      top: 28px;
+      left: 28px;
+      max-width: 280px;
+    }
+
+    @media (min-width: $lg) {
+      max-width: 460px;
+      border-radius: $border-radius-lg;
+    }
+
+    @media (min-width: $xl) {
+      top: 50px;
+      left: 50px;
+    }
+
+    @media (min-width: $xxl) {
+      top: 70px;
+      left: 70px;
+    }
+  }
+
+  &__info {
+    flex: 1;
+    @media (min-width: $md) {
+      display: flex;
+      flex-direction: column;
+      .btn_brand {
+        margin-top: auto;
+        align-self: flex-start;
+      }
+    }
+
+    p {
+      margin: 0 0 1.5rem;
+    }
+  }
+}

@@ -1,0 +1,3 @@
+mixin useSprite(iconId, className='', size='24px')
+  svg(class=className width=size height=size viewBox="0 0 24 24" aria-hidden="true")
+    use(href=`@img/sprite.svg#${iconId}`)

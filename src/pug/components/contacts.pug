@@ -1,0 +1,32 @@
+include ../mixins/sprite
+
+section.contacts
+        .contacts__right-box
+            .contacts__right
+                h2.heading-section Fill in your details
+                form.contact-form(action="")
+                    .contact-form__row
+                        label(for="user-name") Name
+                        input(type="text", placeholder = "Name" id="user-name")
+                    .contact-form__row
+                        label(for="user-email") Email
+                        input(type="email", placeholder = "email@mail.com" id="user-email")
+                    .contact-form__row
+                        label(for="user-message") Message
+                        textarea(id="user-message", placeholder = "Message")
+                    button(class="btn btn_brand" type="submit") Submit
+        .contacts__left-box
+            .contacts__left
+                .contacts__heading
+                    h2.heading-section.c-light Contact us
+                    p Have an inquiry?  We’ll be happy to assist you
+                ul.contacts__list(role="list") 
+                    li.contacts__list-item 
+                        +useSprite("icon-phone--hover", "icon-phone_hover")
+                        |+92 333 6527366
+                    li.contacts__list-item 
+                        +useSprite("icon-email--hover", "icon-email_hover")
+                        | user@greelogix.com
+                    li.contacts__list-item 
+                        +useSprite("icon-map-pin--hover", "icon-map-pin_hover")
+                        | Plot 252, Block L Phase 2 Johar Town, Lahore, PK

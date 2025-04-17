@@ -1,0 +1,23 @@
+include ../mixins/sprite
+- 
+    const categories = [
+    {icon: 'icon-dj-mixer', title: 'Pop', content: "Experience the thrill of pop music live — vibrant, catchy, unforgettable. Get tickets now!"},
+    {icon: 'icon-bagpipes', title: 'Folk', content: "Discover the charm of folk music — rich, soulful, traditional, and deeply emotional."},
+    {icon: 'icon-saxophone', title: 'Instrumental', content: "Immerse yourself in instrumental music — powerful, melodic, expressive, and beautifully soothing."},
+    {icon: 'icon-guitar',title: 'Rock', content: "Experience the raw energy of rock music — powerful, rebellious, intense, and electrifying."},
+    {icon: 'icon-trumpet', title: 'Jazz', content: "Explore the smooth elegance of jazz music — spontaneous, soulful, rhythmic, and improvisational."}
+    ]
+
+section.section.categories
+    
+    h2.container.heading-section 
+        span.c-blue Explore 
+        | By Category
+    ul.categories__list
+        each category,index in categories
+            li(class = `categories__item categories__item_${category.title.toLowerCase()}` data-aos="fade-left" data-aos-offset="100" data-aos-delay=`${index*100}` data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false")
+                - const icon = category.icon
+                .categories__icon-box
+                    +useSprite(`${icon}`, `categories__icon ${icon}`)
+                h3(class=`categories__title categories__title${icon === 'icon-saxophone' ? '_light' : ''}`)= category.title
+                p(class=`categories__content categories__content${icon === 'icon-saxophone' ? '_light' : ''}`)= category.content

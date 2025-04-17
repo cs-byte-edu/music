@@ -1,0 +1,252 @@
+@use "../base/variables" as *;
+
+.categories {
+  overflow-x: hidden;
+  &__list {
+    --categories-list-gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--categories-list-gap);
+    width: 100%;
+    max-width: 1920px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 15px;
+
+    @media (min-width: $md) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    @media (min-width: $xl) {
+      --categories-list-gap: 30px;
+      padding: 0;
+    }
+  }
+
+  &__item {
+    border-radius: $border-radius-md;
+    padding: 30px 40px 18px 20px;
+
+    @media (min-width: $md) {
+      flex: 1 1 calc(50% - var(--categories-list-gap));
+    }
+
+    @media (min-width: $xl) {
+      border-radius: $border-radius-lg;
+      flex: 1 1 calc(20% - var(--categories-list-gap));
+      max-width: 20%;
+    }
+
+    @media (min-width: $xxl) {
+      padding: 90px 67px 18px 55px;
+    }
+
+    &_pop {
+      position: relative;
+      background-color: var(--c-ochre-200);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 12%;
+        display: block;
+        width: 60px;
+        height: 8px;
+        border: 1px solid var(--c-dark);
+        box-shadow: 0 3px 0 var(--c-red-500), inset 0 -3px 0 var(--c-red-500);
+        transform: rotate(45deg);
+
+        @media (min-width: $xl) {
+          top: -25px;
+          left: 26%;
+          width: 120px;
+          height: 16px;
+          box-shadow: 0 8px 0 var(--c-red-500), inset 0 -8px 0 var(--c-red-500);
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 83px;
+        height: 16px;
+        border-bottom: 1px solid var(--c-dark);
+        border-top: 4px solid var(--c-sky-blue);
+        background: linear-gradient(
+            90deg,
+            var(--c-dark) 0,
+            var(--c-dark) 1px,
+            transparent 1px,
+            transparent 82px,
+            var(--c-dark) 82px,
+            var(--c-dark) 83px
+          ),
+          linear-gradient(
+            -180deg,
+            var(--c-dark) 0,
+            var(--c-dark) 1px,
+            var(--c-sky-blue) 1px,
+            var(--c-sky-blue) 6px,
+            transparent 6px
+          );
+        transform: rotate(-29deg);
+
+        @media (min-width: $xl) {
+          right: 19%;
+          bottom: -20px;
+          width: 166px;
+          height: 33px;
+          border-bottom: 1px solid var(--c-dark);
+          border-top: 11px solid var(--c-sky-blue);
+          background: linear-gradient(
+              90deg,
+              var(--c-dark) 0,
+              var(--c-dark) 1px,
+              transparent 1px,
+              transparent 165px,
+              var(--c-dark) 165px,
+              var(--c-dark) 166px
+            ),
+            linear-gradient(
+              -180deg,
+              var(--c-dark) 0,
+              var(--c-dark) 1px,
+              var(--c-sky-blue) 1px,
+              var(--c-sky-blue) 12px,
+              transparent 12px
+            );
+        }
+      }
+
+      &:hover {
+        box-shadow: var(--shadow-ochre);
+      }
+      .icon-dj-mixer {
+        fill: var(--c-ochre);
+      }
+    }
+    /* categories__item_folk */
+    &_folk {
+      background-color: var(--c-red-200);
+      &:hover {
+        box-shadow: var(--shadow-red);
+      }
+      .icon-bagpipes {
+        fill: var(--c-red);
+      }
+    }
+    /* categories__item_instrumental */
+    &_instrumental {
+      color: var(--c-light);
+      background-color: var(--c-blue);
+
+      &:hover {
+        box-shadow: var(--shadow-blue);
+      }
+
+      .icon-saxophone {
+        fill: var(--c-light);
+      }
+    }
+    /* categories__item_rock */
+    &_rock {
+      background-color: var(--c-magenta-200);
+
+      &:hover {
+        box-shadow: var(--shadow-magenta);
+      }
+      .icon-guitar {
+        fill: var(--c-magenta);
+      }
+    }
+    /* categories__item_jazz */
+    &_jazz {
+      position: relative;
+      background-color: var(--c-sky-blue-200);
+
+      &::before {
+        content: "";
+        position: absolute;
+        right: 40%;
+        top: 5px;
+        display: block;
+        width: 40px;
+        height: 8px;
+        border-radius: 4px;
+        background-color: var(--c-dark);
+        transform: rotate(-27deg);
+
+        @media (min-width: $xl) {
+          top: 10px;
+          left: 39%;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 26px;
+        height: 26px;
+        border-radius: 100%;
+        background-color: var(--c-blue);
+        right: 21%;
+
+        @media (min-width: $xl) {
+          bottom: 5px;
+        }
+      }
+
+      .icon-trumpet {
+        fill: var(--c-sky-blue);
+      }
+
+      &:hover {
+        box-shadow: var(--shadow-sky-blue);
+      }
+    }
+  }
+
+  &__icon-box {
+    margin-bottom: 16px;
+    @media (min-width: $xl) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__title {
+    font-size: 1.125rem;
+    line-height: 1.5em;
+    margin-bottom: 16px;
+    &_light {
+      color: var(--c-light);
+    }
+
+    @media (min-width: $lg) {
+      font-size: 1.5rem;
+    }
+
+    @media (min-width: $xl) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__content {
+    color: var(--c-dark);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    &_light {
+      color: var(--c-light);
+    }
+  }
+}

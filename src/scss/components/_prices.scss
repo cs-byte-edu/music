@@ -1,0 +1,73 @@
+@use "../base/index" as *;
+
+.prices {
+  position: relative;
+  text-align: center;
+  overflow-x: hidden;
+
+  .zigzag_rotated {
+    transform: rotate(77deg);
+    left: 12%;
+    right: auto;
+  }
+
+  @media (min-width: $xl) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    @media (min-width: $md) {
+      flex-direction: row;
+    }
+    @media (min-width: $lg) {
+    }
+
+    @media (min-width: $xl) {
+      gap: 30px;
+    }
+  }
+
+  &__item {
+    flex: 1;
+    text-align: center;
+    box-shadow: 0px 10px 30px rgba(34, 34, 34, 0.15);
+    border-top: 4px solid var(--c-dark);
+    border-radius: $border-radius-md;
+    padding: 15px;
+    background-color: #fff;
+    padding-bottom: 30px;
+    @media (min-width: $md) {
+      border-radius: $border-radius-lg;
+    }
+    @media (min-width: $lg) {
+    }
+    @media (min-width: $xl) {
+      border-radius: 20px;
+      padding-bottom: 30px;
+    }
+
+    &_standart {
+      border-top-color: var(--c-blue);
+    }
+    &_premium {
+      border-top-color: var(--c-red);
+    }
+  }
+  &__cost {
+    font-weight: 700;
+    font-family: $ff-secondary;
+    line-height: 1.25em;
+  }
+
+  &__info {
+    color: var(--c-dark-500);
+
+    &-item {
+      margin-bottom: 15px;
+    }
+  }
+}

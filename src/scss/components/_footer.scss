@@ -1,0 +1,63 @@
+@use "../base/index" as *;
+
+.footer {
+  background-color: var(--c-dark);
+  color: var(--c-light);
+  padding-top: 50px;
+  @media (max-width: ($md - 0.02px)) {
+    padding-bottom: 30px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (min-width: $md) {
+      align-items: stretch;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    @media (min-width: $md) {
+      flex-direction: row;
+    }
+  }
+  &__menu {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-transform: capitalize;
+    gap: 20px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    @media (min-width: $md) {
+      flex-direction: row;
+    }
+    &-item {
+      a {
+        cursor: pointer;
+        &:hover {
+          color: var(--c-red);
+        }
+      }
+    }
+  }
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    &-link {
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+      fill: var(--c-light);
+      cursor: pointer;
+      &:hover {
+        fill: var(--c-red);
+      }
+    }
+  }
+}

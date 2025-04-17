@@ -1,0 +1,35 @@
+- const navItems = [{title: "Home"}, {title: "Tickets", submenu: ["Buy Tickets","VIP & Packages","Group Discounts","Refund Policy"]}, {title:"Schedule", submenu: ["Summer Festivals","Electronic Music", "Festivals", "Indie & Jazz Festivals"]}, {title:"Contact"}];
+
+ul(class="nav disclosure-nav" id="main-nav" role="list")
+    li.nav__item
+        .nav__item-content
+            +useSprite('icon-tag','icon-tag lg-hidden')
+            a(href="#").nav__link Home
+    li.nav__item
+        .nav__item-content
+            +useSprite('icon-ticket','icon-ticket lg-hidden')
+            button(class="nav__btn" type="button", aria-expanded="true", aria-controls="ticket_menu")
+                | Tickets
+                +useSprite('icon-arrow-xs','icon-arrow-xs',"16px")
+        
+        - const submenu = ["Buy Tickets","VIP & Packages","Group Discounts","Refund Policy"]
+        ul#ticket_menu.nav__submenu
+            each submenuItem in submenu
+                li.nav__submenu-item
+                    a(href="#").nav__submenu-link= submenuItem
+    li.nav__item
+        .nav__item-content
+            +useSprite('icon-book','icon-book lg-hidden')
+            button(class="nav__btn" type="button", aria-expanded="true", aria-controls="schedule_menu")
+                | Schedule
+                +useSprite('icon-arrow-xs','icon-arrow-xs',"16px")
+        
+        - const submenu2 =["Summer Festivals","Electronic Music", "Festivals", "Indie & Jazz Festivals"]
+        ul#schedule_menu.nav__submenu
+            each submenuItem in submenu2
+                li.nav__submenu-item
+                    a(href="#").nav__submenu-link= submenuItem
+    li.nav__item
+        .nav__item-content
+            +useSprite('icon-phone','icon-phone lg-hidden')
+            a(href="#").nav__link Contacts

@@ -1,0 +1,33 @@
+include ../mixins/sprite
+
+footer(class = 'footer') 
+    .container
+        a(href="#")
+            img(src="@img/logo.svg", alt="Music logo")
+        .footer__bottom
+            ul.footer__menu 
+                li.footer__menu-item 
+                    a Home
+                li.footer__menu-item 
+                    a Company
+                li.footer__menu-item 
+                    a Blog
+                li.footer__menu-item 
+                    a Contact us
+                li.footer__menu-item 
+                    a sitemap
+            ul.footer__social 
+                li.footer__social-item 
+                    a.footer__social-link
+                        +useSprite("icon-facebook", "icon-facebook")
+                li.footer__social-item 
+                    a.footer__social-link
+                        +useSprite("icon-twitter", "icon-twitter")
+                li.footer__social-item 
+                    a.footer__social-link
+                        +useSprite("icon-linkedin", "icon-linkedin")
+                li.footer__social-item 
+                    a.footer__social-link
+                        +useSprite("icon-instagram", "icon-instagram")
+
+

@@ -1,0 +1,15 @@
+include ../mixins/sprite
+
+section.section.about-music
+    .container.about-music__content
+        .about-music__media(data-aos="fade-right" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false")
+            img(src="@img/jpg/about-music.jpg" class="about-music__img" alt="about music")
+        .about-music__info(data-aos="fade-left" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false")
+            h2
+                | About 
+                span.c-blue Musik
+            p.
+                Fusce justo mi, vehicula id arcu et, dapibus tristique lectus. Vivamus a elit sodales, tincidunt nunc non, maximus lacus. Fusce a augue sed dolor auctor iaculis vitae id mauris. Integer ut lectus non neque suscipit luctus. Mauris et erat id ipsum condimentum cursus. Sed tempus enim non massa mattis iaculis. In quis massa risus
+            button.btn.btn_brand 
+                | Learn more
+                +useSprite("icon-arrow-up", "icon-arrow-up")

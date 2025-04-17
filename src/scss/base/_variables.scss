@@ -1,0 +1,91 @@
+// -----------------------------------------------------------------------------
+// SCSS variables
+// -----------------------------------------------------------------------------
+
+/* FONTS */
+
+$ff-primary: "Raleway", sans-serif;
+$ff-secondary: "Montserrat", sans-serif;
+$ff-heading: $ff-secondary;
+
+$fw-regular: 400;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+/* MOBILE FIRST BREAKPOINTS */
+
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1280px;
+$xxl: 1536px;
+
+$breakpoints: (
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1536px,
+);
+
+/* BORDER-RADIUS */
+
+$border-radius: 5px;
+$border-radius-sm: 8px;
+$border-radius-md: 12px;
+$border-radius-lg: 24px;
+
+/* Z-index */
+
+$z-index-overlay: 1000;
+
+// -----------------------------------------------------------------------------
+// CSS custom properties
+// -----------------------------------------------------------------------------
+
+:root {
+  /* COLORS */
+
+  --c-light: rgba(255, 255, 255, 1);
+  --c-light-500: rgba(255, 255, 255, 0.5);
+
+  --c-dark: rgba(34, 34, 34, 1);
+  --c-dark-500: rgba(34, 34, 34, 0.5);
+  --c-dark-30: rgba(34, 34, 34, 0.03);
+
+  --c-red: rgba(252, 82, 82, 1);
+  --c-red-200: rgba(252, 82, 82, 0.2);
+  --c-red-500: rgba(255, 163, 163, 1);
+
+  --c-blue: rgba(56, 29, 219, 1);
+  --c-blue-50: rgba(56, 29, 219, 0.05);
+  --c-blue-100: rgba(56, 29, 219, 0.1);
+  --c-blue-200: rgba(56, 29, 219, 0.2);
+
+  --c-grey: rgba(224, 224, 224, 1);
+
+  --c-ochre: rgba(219, 132, 29, 1);
+  --c-ochre-200: rgba(219, 132, 29, 0.2);
+
+  --c-brown: rgba(170, 101, 80, 1);
+
+  --c-magenta: rgba(192, 0, 150, 1);
+  --c-magenta-200: rgba(192, 0, 150, 0.2);
+
+  --c-pink-pastel: rgba(255, 205, 205, 1);
+
+  --c-apricot: rgba(255, 190, 157, 1);
+
+  --c-sky-blue: rgba(132, 196, 255, 1);
+  --c-sky-blue-200: rgba(132, 196, 255, 0.2);
+
+  /* GRADIENTS */
+  --gradient-brand: linear-gradient(180deg, var(--c-blue-50), transparent);
+
+  /* BOX-SHADOW */
+  --shadow-blue: 0 10px 30px 0 var(--c-blue-200);
+  --shadow-ochre: 0 10px 30px 0 var(--c-ochre-200);
+  --shadow-red: 0 10px 30px 0 var(--c-red-200);
+  --shadow-magenta: 0 10px 30px 0 var(--c-magenta-200);
+  --shadow-sky-blue: 0 10px 30px 0 var(--c-sky-blue-200);
+}

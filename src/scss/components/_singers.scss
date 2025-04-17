@@ -1,0 +1,153 @@
+@use "../base/variables" as *;
+
+.singers {
+  overflow: hidden;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 7%;
+    left: 0;
+    display: block;
+    width: 120px;
+    height: 16px;
+    border: 1px solid var(--c-dark);
+    box-shadow: 0 8px 0 var(--c-red-500), inset 0 -8px 0 var(--c-red-500);
+    transform: rotate(-45deg);
+    z-index: -1;
+  }
+
+  .confetti-triangle {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 15px;
+
+    @media (min-width: $md) {
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: 24px;
+    }
+
+    @media (min-width: $lg) {
+      gap: 50px;
+    }
+
+    @media (min-width: $xl) {
+    }
+  }
+
+  &__info {
+    p {
+      margin: 0 0 24px;
+    }
+
+    @media (min-width: $md) {
+      flex: 1 1 40%;
+    }
+  }
+
+  &__media {
+    --gap-singers-media: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: var(--gap-singers-media);
+    margin-bottom: 24px;
+    @media (min-width: $md) {
+      gap: 30px;
+      flex: 1 1 60%;
+    }
+
+    @media (min-width: $xl) {
+      position: relative;
+      justify-content: space-between;
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+        top: 10%;
+        right: -30%;
+        width: 230px;
+        height: 105px;
+        transform: rotate(15deg);
+        background-image: radial-gradient(
+            circle at 2px 2px,
+            #222 2px,
+            transparent 2px
+          ),
+          linear-gradient(-156deg, #ffa3a3 50%, transparent 50%);
+        background-size: 20px 20px, 230px 105px;
+        background-position: 0 0, 0 -8px;
+        background-repeat: repeat, no-repeat;
+      }
+    }
+  }
+
+  &__box-img {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+
+    @media (min-width: $xl) {
+      &::before {
+        // content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        // filter: blur(10px);
+        z-index: 0;
+        opacity: 0.6;
+      }
+      &:nth-child(1) {
+        align-items: flex-end;
+        padding-bottom: 4px;
+      }
+      &:nth-child(2) {
+        padding-bottom: 20px;
+      }
+      &:nth-child(3) {
+        padding-top: 20px;
+      }
+      &:nth-child(4) {
+        &::before {
+          background-image: url("@img/jpg/singer-bottom-right.jpg");
+        }
+      }
+    }
+    @media (max-width: ($lg - 0.02)) {
+      flex: 1 1 calc(50% - var(--gap-singers-media));
+      max-width: 280px;
+    }
+  }
+
+  &__img {
+    position: relative;
+    z-index: 1;
+    border-radius: $border-radius-md;
+    box-shadow: var(--c-blue) 1px 5px 15px;
+
+    @media (min-width: $md) {
+    }
+
+    @media (min-width: $lg) {
+      border-radius: $border-radius-lg;
+      display: inline-block;
+    }
+
+    @media (max-width: ($lg - 0.02)) {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

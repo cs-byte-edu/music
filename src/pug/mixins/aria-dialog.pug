@@ -1,0 +1,7 @@
+mixin aria-dialog
+    div.dialog-backdrop#modalBackdrop
+        div(id="myModal", role="dialog", class="dialog", aria-modal="true")&attributes(attributes)
+            video( id="modalVideo", controls)
+                source(src="@img/video.mp4" type="video/mp4")
+                | Your browser does not support the video tag
+            button(type="button", class="btn-close", id="closeModalBtn")

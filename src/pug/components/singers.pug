@@ -1,0 +1,22 @@
+include ../mixins/sprite
+
+section.section.singers
+    span.confetti-triangle.lg-visible
+        <svg xmlns="http://www.w3.org/2000/svg" width="144" height="117" fill="none"><path fill="#84C4FF" d="M30 17.174 144 17 86.85 117 30 17.174Z"/><path stroke="#222" stroke-width="8" d="M56.857 91.928 6.875 4.163l100.226-.152-50.244 87.917Z"/></svg>
+    .container.singers__content
+        .singers__media
+            .singers__box-img(data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false")
+                img(src="@img/jpg/singer-top-left.jpg" alt="singer photo" width="370" height="270" class="singers__img singers__1")
+            .singers__box-img(data-aos="fade-up" data-aos-offset="200" data-aos-delay="150" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false")
+                img(src="@img/jpg/singer-top-right.jpg" alt="singer photo 2" width="270" height="306" class="singers__img singers__2")
+            .singers__box-img(data-aos="fade-up" data-aos-offset="200" data-aos-delay="250" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false")
+                img(src="@img/jpg/singer-bottom-left.jpg" alt="singer photo 3" width="270" height="306" class="singers__img singers__3")
+            .singers__box-img(data-aos="fade-up" data-aos-offset="200" data-aos-delay="350" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false")
+                img(src="@img/jpg/singer-bottom-right.jpg" alt="singer photo 4" width="370" height="306" class="singers__img singers__4")
+        .singers__info
+            h2 Singers
+            p.
+                Fusce justo mi, vehicula id arcu et, dapibus tristique lectus. Vivamus a elit sodales, tincidunt nunc non, maximus lacus. Fusce a augue sed dolor auctor iaculis vitae id mauris. Integer ut lectus non neque suscipit luctus. Mauris et erat id ipsum condimentum cursus. Sed tempus enim non massa mattis iaculis. In quis massa risus
+            button.btn.btn_brand 
+                | View All Singers
+                +useSprite("icon-arrow-up", "icon-arrow-up")

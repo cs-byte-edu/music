@@ -1,0 +1,114 @@
+@use "variables" as *;
+
+html {
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+body {
+  font-family: $ff-primary;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: var(--c-dark-500);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+em {
+  font-style: normal;
+}
+
+img {
+  display: block;
+}
+
+.page-container {
+  min-width: 320px;
+}
+
+.container {
+  max-width: 1200px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @media (min-width: $xl) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
+
+.heading-section {
+  margin-bottom: 24px;
+
+  @media (min-width: $xl) {
+    margin-bottom: 60px;
+  }
+}
+
+.c-red {
+  color: var(--c-red-500);
+}
+
+.c-blue {
+  color: var(--c-blue);
+}
+
+.c-light {
+  color: var(--c-light);
+}
+
+.c-dark {
+  color: var(--c-dark);
+}
+
+.lg-visible {
+  display: none;
+}
+
+@media (min-width: $lg) {
+  .lg-hidden {
+    display: none;
+  }
+
+  .lg-visible {
+    display: block;
+  }
+}

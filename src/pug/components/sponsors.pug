@@ -1,0 +1,11 @@
+- const sponsors = ['google', 'microsoft', 'airb', 'axure', 'apple', 'fb', 'nokia', 'oracle'];
+
+section.section.sponsors 
+    .container 
+        h2 Our Sponsors
+        .logos
+            ul.logos-slide
+                each imgName in sponsors 
+                    li.sponsors__item
+                        img(src = `@img/png/${imgName}.png`)
+        button.btn.btn_brand Become a Sponsor

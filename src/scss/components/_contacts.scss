@@ -1,0 +1,135 @@
+@use "../base/index" as *;
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  @media (min-width: $lg) {
+    flex-direction: row-reverse;
+  }
+
+  &__left-box {
+    flex: 1;
+    display: flex;
+
+    background-color: var(--c-blue);
+    justify-content: center;
+    color: var(--c-light);
+    padding: 32px 16px;
+
+    @media (min-width: $lg) {
+      padding-right: 80px;
+      justify-content: flex-end;
+    }
+
+    @media (min-width: $xl) {
+      padding-right: 130px;
+
+      padding-top: 120px;
+      padding-bottom: 120px;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: $lg) {
+      gap: 2.5rem;
+    }
+  }
+
+  &__heading {
+    h2 {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__right {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__right-box {
+    flex: 1;
+    display: flex;
+    background-color: rgba(34, 34, 34, 0.03);
+    padding: 32px 16px;
+    @media (min-width: $lg) {
+      padding-left: 80px;
+    }
+    @media (min-width: $xl) {
+      padding-left: 130px;
+      padding-right: 130px;
+      padding-top: 120px;
+      padding-bottom: 120px;
+    }
+  }
+
+  &__list {
+    font-weight: $fw-semibold;
+    margin-top: 20px;
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+
+      @media (min-width: $xl) {
+        margin-bottom: 32px;
+      }
+      svg {
+        fill: var(--c-red-500);
+      }
+    }
+  }
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 560px;
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 16px;
+    &:focus-within {
+      label {
+        color: var(--c-blue);
+      }
+      input,
+      textarea {
+        border-color: var(--c-blue);
+      }
+    }
+    label {
+      color: var(--c-dark);
+      font-weight: $fw-semibold;
+      font-size: 14px;
+    }
+    input {
+      height: 48px;
+      width: 100%;
+      padding: 8px 12px;
+      border: none;
+      border-bottom: 1px solid var(--c-grey);
+      &::placeholder {
+        color: var(--c-grey);
+      }
+    }
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      padding: 16px;
+      border: none;
+      resize: none;
+      border-bottom: 1px solid var(--c-grey);
+      &::placeholder {
+        color: var(--c-grey);
+      }
+    }
+  }
+  button {
+    width: 100%;
+  }
+}

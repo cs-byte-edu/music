@@ -1,0 +1,173 @@
+@use "../base/index" as *;
+
+.events {
+  background: var(--gradient-brand);
+  overflow-x: hidden;
+
+  &__container {
+    position: relative;
+  }
+
+  &__schedule {
+    position: relative;
+    z-index: 2;
+  }
+
+  .confetti-triangle {
+    position: absolute;
+    bottom: 50px;
+    right: -6%;
+  }
+
+  &__tablist {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    @media (min-width: $lg) {
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__tab {
+    flex: 1;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    border-bottom: 4px solid var(--c-blue-100);
+    font-family: $ff-secondary;
+    font-weight: $fw-semibold;
+    color: var(--c-dark-500);
+    font-size: 1.125rem;
+
+    &[aria-selected="true"] {
+      color: var(--c-blue);
+      border-color: var(--c-blue);
+    }
+
+    @media (min-width: $lg) {
+      font-size: 1.5rem;
+      line-height: em(24, 38);
+      padding-bottom: 20px;
+    }
+
+    &-label {
+      display: block;
+      line-height: 1.25em;
+      font-size: 1rem;
+      @media (min-width: $lg) {
+      }
+    }
+  }
+
+  &__panel {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.icon-box {
+  &:hover {
+    fill: var(--c-red);
+  }
+}
+
+.zigzag-bd {
+  position: absolute;
+  top: 50%;
+  right: -5%;
+
+  &_rotated {
+    top: 25%;
+    left: -7%;
+    right: auto;
+    transform: rotate(45deg);
+  }
+}
+
+.zigzag-bd:before,
+.zigzag-bd:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 175px;
+  height: 175px;
+  background-repeat: no-repeat;
+}
+
+.zigzag-bd::before,
+.zigzag-bd::after {
+  background-image: linear-gradient(90deg, var(--c-blue) 0 8px),
+    linear-gradient(90deg, var(--c-blue) 0 8px),
+    linear-gradient(90deg, var(--c-blue) 0 8px),
+    linear-gradient(90deg, var(--c-blue) 0 8px),
+    linear-gradient(var(--c-blue) 0 8px), linear-gradient(var(--c-blue) 0 8px),
+    linear-gradient(var(--c-blue) 0 8px),
+    /* next */ linear-gradient(90deg, #fff 0 8px),
+    linear-gradient(90deg, #fff 0 8px), linear-gradient(90deg, #fff 0 8px),
+    linear-gradient(90deg, #fff 0 8px), linear-gradient(#fff 0 8px),
+    linear-gradient(#fff 0 8px), linear-gradient(#fff 0 8px),
+    /* next */ linear-gradient(90deg, var(--c-blue) 0 8px),
+    linear-gradient(90deg, var(--c-blue) 0 8px),
+    linear-gradient(90deg, var(--c-blue) 0 8px),
+    linear-gradient(90deg, var(--c-blue) 0 8px),
+    linear-gradient(var(--c-blue) 0 8px), linear-gradient(var(--c-blue) 0 8px),
+    linear-gradient(var(--c-blue) 0 8px);
+
+  background-size: 8px 48px, 8px 48px, 8px 48px, 8px 48px, 48px 8px, 48px 8px,
+    48px 8px, /* next */ 7px 46px, 7px 46px, 7px 46px, 7px 46px, 46px 7px,
+    46px 7px, 46px 7px, /* next */ 9px 46px, 9px 48px, 9px 48px, 9px 48px,
+    48px 9px, 48px 9px, 48px 9px;
+  background-position: 0 5px, 40px 45px, 80px 85px, 120px 125px, 0 45px,
+    40px 85px, 80px 125px, /* next */ 5px 3px, 45px 43px, 85px 81px, 125px 121px,
+    6px 41px, 41px 81px, 80px 121px, /*next*/ 4px 2px, 44px 40px, 84px 82px,
+    124px 120px, 4px 40px, 45px 80px, 85px 120px;
+}
+
+.zigzag-bd::after {
+  background-image: linear-gradient(90deg, var(--c-red) 0 8px),
+    linear-gradient(90deg, var(--c-red) 0 8px),
+    linear-gradient(90deg, var(--c-red) 0 8px),
+    linear-gradient(90deg, var(--c-red) 0 8px),
+    linear-gradient(var(--c-red) 0 8px), linear-gradient(var(--c-red) 0 8px),
+    linear-gradient(var(--c-red) 0 8px),
+    /* next */ linear-gradient(90deg, #fff 0 8px),
+    linear-gradient(90deg, #fff 0 8px), linear-gradient(90deg, #fff 0 8px),
+    linear-gradient(90deg, #fff 0 8px), linear-gradient(#fff 0 8px),
+    linear-gradient(#fff 0 8px), linear-gradient(#fff 0 8px),
+    /* next */ linear-gradient(90deg, var(--c-red) 0 8px),
+    linear-gradient(90deg, var(--c-red) 0 8px),
+    linear-gradient(90deg, var(--c-red) 0 8px),
+    linear-gradient(90deg, var(--c-red) 0 8px),
+    linear-gradient(var(--c-red) 0 8px), linear-gradient(var(--c-red) 0 8px),
+    linear-gradient(var(--c-red) 0 8px);
+}
+
+.zigzag-bd::after {
+  top: 45px;
+  left: -25px;
+}
+
+.confetti-circle {
+  position: absolute;
+  top: 90%;
+  left: -7%;
+  width: 83px;
+  height: 83px;
+  border-radius: 100%;
+  background: var(--c-sky-blue);
+
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border: 8px solid var(--c-dark);
+    position: absolute;
+    top: -16px;
+    left: 16px;
+  }
+}

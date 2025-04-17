@@ -1,0 +1,107 @@
+@use "variables" as *;
+@use "sass:list";
+@use "sass:map";
+@use "sass:math";
+@use "sass:meta";
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $ff-heading;
+  font-weight: 700;
+  color: var(--c-dark);
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+$typography: (
+  h1: (
+    base: 29px,
+    sm: 35px,
+    md: 42px,
+    lg: 50px,
+    xl: 60px,
+  ),
+  ".h1": (
+    base: 29px,
+    sm: 35px,
+    md: 42px,
+    lg: 50px,
+    xl: 60px,
+  ),
+  h2: (
+    base: 20px,
+    md: 24px,
+    lg: 28px,
+    xl: 34px,
+  ),
+  h3: (
+    base: 17px,
+    sm: 20px,
+    md: 24px,
+  ),
+  h4: (
+    base: 17px,
+    sm: 20px,
+  ),
+);
+
+@function get-font-styles($value) {
+  @if meta.type-of($value) == "list" {
+    @return (font-size: list.nth($value, 1), line-height: list.nth($value, 2));
+  } @else {
+    @return (font-size: $value);
+  }
+}
+
+@mixin set-adaptive-font-size($typography-map, $breakpoints) {
+  @each $selector, $font-style-map in $typography-map {
+    #{$selector} {
+      @each $breakpoint, $size in $font-style-map {
+        $styles: get-font-styles($size);
+        @if map.has-key($breakpoints, $breakpoint) {
+          @media (min-width: map.get($breakpoints, $breakpoint)) {
+            font-size: map.get($styles, font-size);
+            line-height: map.get($styles, line-height);
+          }
+        } @else {
+          font-size: map.get($styles, font-size);
+          line-height: map.get($styles, line-height);
+        }
+      }
+    }
+  }
+}
+
+@function generate-adaptive-font-sizes(
+  $breakpoints,
+  $font-size-base,
+  $scale-factor
+) {
+  $typography-map: ();
+  $breakpoints-list: list.join(base, map.keys($breakpoints));
+  $size-list: map.values($breakpoints);
+
+  @for $i from 1 through list.length($breakpoints-list) {
+    $key: list.nth($breakpoints-list, $i);
+    $value: math.round(
+      math.div(
+        $font-size-base,
+        math.pow($scale-factor, list.length($size-list) - $i + 1)
+      )
+    );
+    $typography-map: map.merge(
+      $typography-map,
+      (
+        $key: $value,
+      )
+    );
+  }
+
+  @return $typography-map;
+}
+
+@include set-adaptive-font-size($typography, $breakpoints);

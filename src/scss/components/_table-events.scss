@@ -1,0 +1,225 @@
+@use "../base/index" as *;
+@use "sass:math";
+
+.event-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: $ff-primary;
+  text-align: left;
+  width: 100%;
+
+  tr {
+    &:last-of-type {
+      @media (min-width: $lg) {
+        td:first-of-type {
+          border-bottom-left-radius: $border-radius-lg;
+        }
+        td:last-of-type {
+          border-bottom-right-radius: $border-radius-lg;
+        }
+      }
+    }
+    @media (max-width: ($lg - 0.02)) {
+      border-bottom: 1px solid var(--c-blue-100);
+    }
+  }
+
+  &__head {
+    background-color: var(--c-blue-100);
+  }
+
+  &__th {
+    font-weight: $fw-bold;
+    font-size: 1.25rem;
+    line-height: em(1.5rem, 2.375rem);
+    color: var(--c-dark);
+
+    &:nth-of-type(1) {
+      font-size: 22px;
+      padding-top: 30px;
+      padding-left: 30px;
+      padding-bottom: 30px;
+      width: math.div(270, 1170) * 100%;
+      @media (min-width: $lg) {
+        font-size: 24px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        padding-left: 40px;
+        border-top-left-radius: $border-radius-lg;
+      }
+    }
+
+    &:nth-of-type(2) {
+      width: math.div(400, 1170) * 100%;
+    }
+
+    &:last-of-type {
+      @media (min-width: $lg) {
+        border-top-right-radius: $border-radius-lg;
+      }
+    }
+  }
+
+  &__td {
+    background-color: #fff;
+
+    &:nth-of-type(1) {
+      @media (min-width: $lg) {
+        border-left: 1px solid var(--c-blue-100);
+      }
+    }
+
+    &:last-of-type {
+      @media (min-width: $lg) {
+        border-right: 1px solid var(--c-blue-100);
+      }
+    }
+
+    @media (min-width: $lg) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      padding: 15px;
+      border-bottom: 1px solid var(--c-blue-100);
+    }
+
+    @media (max-width: ($lg - 0.02)) {
+      display: flex;
+      align-items: center;
+      padding: 20px 15px;
+    }
+
+    &_time {
+      color: var(--c-red);
+      font-weight: $fw-semibold;
+      @media (max-width: ($lg - 0.02)) {
+        &:before {
+          content: "Time";
+        }
+      }
+    }
+
+    &_content {
+      @media (max-width: ($lg - 0.02)) {
+        &:before {
+          content: "Content";
+          // color: var(--c-dark);
+          // font-weight: $fw-semibold;
+        }
+      }
+    }
+
+    &_speaker {
+      position: relative;
+      @media (max-width: ($lg - 0.02)) {
+        padding-left: 29%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        &:before {
+          content: "Speaker";
+          position: absolute;
+          left: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+
+  &__td-title {
+    margin: 0;
+    font-weight: $fw-semibold;
+    color: var(--c-dark);
+  }
+
+  &__subtitle {
+    color: var(--c-dark);
+    font-size: 1rem;
+    line-height: em(16, 24);
+    width: 100%;
+    margin: 0;
+    .label {
+      font-weight: $fw-bold;
+      color: var(--c-blue);
+    }
+  }
+
+  &__speaker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    &:not(:last-child) {
+      @media (min-width: $lg) {
+        margin-bottom: 20px;
+      }
+
+      @media (min-width: $xl) {
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  &__avatar {
+    display: block;
+    width: 58px;
+    height: 58px;
+    border-radius: 100%;
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+}
+
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-weight: $fw-semibold;
+
+  &_preview {
+    color: var(--c-ochre);
+    fill: var(--c-ochre);
+  }
+
+  &_live {
+    color: var(--c-red);
+    fill: var(--c-red);
+  }
+
+  &_upcoming {
+    color: var(--c-blue);
+    fill: var(--c-blue);
+  }
+}
+
+@media (max-width: ($lg - 0.02)) {
+  table,
+  thead,
+  tbody,
+  tr,
+  th,
+  td {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr:nth-child(odd) {
+    background-color: var(--c-brand-100);
+  }
+
+  td:before {
+    display: block;
+    padding-right: 15px;
+    font-weight: 700;
+    font-size: 16px;
+    flex: 0 0 25%;
+    color: var(--c-dark);
+    font-weight: $fw-semibold;
+  }
+}

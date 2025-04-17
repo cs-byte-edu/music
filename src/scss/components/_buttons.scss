@@ -1,0 +1,184 @@
+@use "../base" as *;
+
+$btn-fz: 1rem;
+$btn-padding-top: 20px;
+$btn-padding-bottom: 20px;
+$btn-padding-right: 34px;
+$btn-padding-left: 34px;
+$btn-ff: $ff-secondary;
+$btn-line-height: 1.25em;
+
+.btn {
+  border-radius: $border-radius;
+  color: var(--c-light);
+  line-height: 1.25em;
+  border: none;
+  background-color: transparent;
+  display: inline-flex;
+  font-size: $btn-fz;
+  text-align: center;
+  svg {
+    pointer-events: none;
+  }
+  &_bordered {
+    border: 1px solid var(--c-blue);
+    padding: 20px 34px;
+    color: var(--c-blue);
+    font-weight: 700;
+  }
+  &_accent {
+    background-color: var(--c-red);
+    color: var(--c-light);
+    padding: 18px 34px;
+    min-width: 136px;
+    font-weight: $fw-bold;
+    &:hover {
+      color: var(--c-red);
+      background-color: var(--c-light);
+    }
+  }
+  &_brand {
+    background-color: var(--c-blue);
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 20px 34px;
+    box-shadow: var(--shadow-blue);
+    border: 1px solid transparent;
+    .icon-arrow-up {
+      fill: var(--c-light);
+      transform: rotate(90deg);
+    }
+    &:hover {
+      background: transparent;
+      border-color: var(--c-blue);
+      color: var(--c-blue);
+      .icon-arrow-up {
+        fill: var(--c-blue);
+      }
+    }
+  }
+  &-watch-video {
+    background-color: transparent;
+    color: var(--c-light);
+    font-family: $ff-secondary;
+    font-weight: 800;
+    font-size: 1rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+
+    &:hover {
+      color: var(--c-red);
+
+      .icon-play {
+        fill: var(--c-red);
+      }
+    }
+
+    .icon-play {
+      fill: var(--c-light);
+      width: 36px;
+      height: 36px;
+    }
+    @media (min-width: $lg) {
+      font-size: rem(20);
+      line-height: em(20, 28);
+      gap: 18px;
+      .icon-play {
+        width: 56px;
+        height: 56px;
+      }
+    }
+  }
+}
+
+%btn-burger {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  background-image: linear-gradient(90deg, var(--c-light), var(--c-light));
+  background-size: 25px 2px;
+  background-repeat: no-repeat;
+  background-position: 50% 14px;
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: var(--c-light);
+    position: absolute;
+    right: 7.5px;
+  }
+  &:before {
+    top: 19px;
+    width: 21px;
+  }
+
+  &:after {
+    top: 24px;
+    width: 25px;
+  }
+}
+
+.btn-burger_hidden-active,
+.btn-close {
+  @extend %btn-burger;
+}
+
+.btn-burger_hidden-active {
+  &.is_active {
+    display: none;
+  }
+}
+
+.dialog__btn-close,
+.btn-close {
+  background-image: none;
+  z-index: $z-index-overlay;
+  &:before,
+  &:after {
+    top: 19px;
+    width: 20px;
+    right: 10px;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
+
+.btn-get-tickets {
+  text-transform: uppercase;
+  color: var(--c-blue);
+  font-size: $btn-fz;
+  font-family: $btn-ff;
+  line-height: $btn-line-height;
+  font-weight: 700;
+  background-color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px 9px;
+
+  @media (max-width: ($lg - 0.02)) {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+
+  @media (min-width: $lg) {
+    padding: 18px 35px;
+  }
+}

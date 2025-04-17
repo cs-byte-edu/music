@@ -1,0 +1,48 @@
+include ../mixins/sprite
+include ../mixins/aria-dialog
+
+
+header.header
+    picture.header__bg
+        source(
+            type="image/webp"
+            srcset="@img/webp/hero-bg-1920.webp"
+            media="(min-width: 960px)"
+        )
+        source(
+            type="image/webp"
+            srcset="@img/webp/hero-bg-960.webp"
+            media="(min-width: 480px)"
+        )
+        source(
+            type="image/webp"
+            srcset="@img/webp/hero-bg-480.webp"
+        )
+        img(
+            srcset="@img/jpg/hero-bg-1920.jpg 1920w, @img/jpg/hero-bg-960.jpg 960w, @img/jpg/hero-bg-480.jpg 480w"
+            sizes="(min-width: 960px) 1920px, (min-width: 480px) 960px, 100vw"
+            alt="Background image"
+        )
+
+    .container.header__box
+        .header__top
+            a.logo
+                img(src="@img/logo.svg")
+            include nav
+            button(class = "btn-burger_hidden-active lg-hidden" data-trigger="toggle" data-target="#nav-box")
+            button.btn-get-tickets GET TICKETS
+        .header__hero
+            h1.header__heading
+                | The Best experience of 
+                em.c-red music 
+                | in 2021
+            p.header__info.
+                Enjoy an unforgettable atmosphere, top DJ, live performances, and pure sound at the ultimate music event!
+            .controls 
+                button.btn.btn_accent Get Started
+                button(type="button", class="btn btn-watch-video" id="openModalBtn")
+                    +useSprite("icon-play", "icon-play")
+                    | Watch Video
+    +aria-dialog
+    #timer.timer
+    div(class = "header__overlay" data-trigger="close" data-target="#nav-box")

@@ -1,0 +1,127 @@
+include ../mixins/sprite
+
+section.shots
+
+    h2.heading-section.container 
+        | See our 
+        span.c-blue Best Shots
+    .carousel
+        .carousel__box 
+            .slide.slide-1
+                .slide__img
+                    img(src="@img/jpg/shot-1.jpg" alt="")
+                .shot-info
+                    span.shot-info-item
+                        +useSprite("icon-chat", "icon-chat") 
+                        | 412
+                    span.shot-info-item
+                        +useSprite("icon-heart", "icon-heart") 
+                        | 150
+                //- p Lorem Ipsum Amet
+                
+                - const tags = ['#music','#concert','#event','#dj','#dance']
+                
+                ul.shot-tags
+                    each tag in tags
+                        li.shot-tags__item
+                            a(href="#" class="shot-tags__link")= tag
+
+            .slide.slide-2
+                .slide__img
+                    img(src="@img/jpg/shot-2.jpg" alt="")
+                .shot-info
+                    span.shot-info-item
+                        +useSprite("icon-chat", "icon-chat") 
+                        | 120
+                    span.shot-info-item
+                        +useSprite("icon-heart", "icon-heart") 
+                        | 50
+                //- p Lorem Ipsum Amet
+
+                - const tags_2 = ['#technonight','#event','#edmvibe','#nightshift']
+                
+                ul.shot-tags
+                    each tag in tags_2
+                        li.shot-tags__item
+                            a(href="#" class="shot-tags__link")= tag
+
+            .slide.slide-3
+                .slide__img
+                    img(src="@img/jpg/shot-3.jpg" alt="")
+                .shot-info
+                    span.shot-info-item
+                        +useSprite("icon-chat", "icon-chat") 
+                        | 409
+                    span.shot-info-item
+                        +useSprite("icon-heart", "icon-heart") 
+                        | 500
+                //- p Lorem Ipsum Amet
+
+                - const tags_3 = ['#london','#event','#artist','#dj','#dance']
+
+                ul.shot-tags
+                    each tag in tags_3
+                        li.shot-tags__item
+                            a(href="#" class="shot-tags__link")= tag
+
+            .slide.slide-4
+                .slide__img
+                    img(src="@img/jpg/shot-4.jpg" alt="")
+                .shot-info
+                    span.shot-info-item
+                        +useSprite("icon-chat", "icon-chat") 
+                        | 267
+                    span.shot-info-item
+                        +useSprite("icon-heart", "icon-heart") 
+                        | 159
+                //- p Lorem Ipsum Amet
+
+                - const tags_4 = ['#guitarhero','#altvibes ','#rawsound','#rockanthem']
+                
+                ul.shot-tags
+                    each tag in tags_4
+                        li.shot-tags__item
+                            a(href="#" class="shot-tags__link")= tag
+
+            .slide.slide-5
+                .slide__img
+                    img(src="@img/jpg/shot-5.jpg" alt="")
+                .shot-info
+                    span.shot-info-item
+                        +useSprite("icon-chat", "icon-chat") 
+                        | 987
+                    span.shot-info-item
+                        +useSprite("icon-heart", "icon-heart") 
+                        | 100
+                //- p Lorem Ipsum Amet
+
+                - const tags_5 = [,'#rainyplaylist ','#artist ','#coffeetunes','#lofibeats']
+
+                ul.shot-tags
+                    each tag in tags_5
+                        li.shot-tags__item
+                            a(href="#" class="shot-tags__link")= tag
+
+            .slide.slide-6 
+                .slide__img
+                    img(src="@img/jpg/shot-3.jpg" alt="")
+                .shot-info
+                    span.shot-info-item
+                        +useSprite("icon-chat", "icon-chat") 
+                        | 428
+                    span.shot-info-item
+                        +useSprite("icon-heart", "icon-heart") 
+                        | 153
+                //- p Lorem Ipsum Amet
+
+                - const tags_6 = ['#music','#london','#event','#artist','#dj']
+
+                ul.shot-tags
+                    each tag in tags_6
+                        li.shot-tags__item
+                            a(href="#" class="shot-tags__link")= tag
+
+        .btn-prev
+            +useSprite("icon-arrow-xs", "icon-prev-btn",'32px')
+        .btn-next
+            +useSprite("icon-arrow-xs", "icon-next-btn",'32px')
