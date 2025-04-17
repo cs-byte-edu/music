@@ -29,7 +29,8 @@
       <div class="container header__box">
         <div class="header__top"><a class="logo"><img src="img/logo.svg"></a>
           <nav class="nav-box" id="nav-box">
-            <button class="btn-close lg-hidden" data-trigger="close" data-target="#nav-box"></button>
+            <button class="btn-close lg-hidden" type="button" aria-label="Get tickets for the event"
+              data-trigger="close" data-target="#nav-box"></button>
             <ul class="nav disclosure-nav" id="main-nav" role="list">
               <li class="nav__item">
                 <div class="nav__item-content">
@@ -84,16 +85,19 @@
               </li>
             </ul>
           </nav>
-          <button class="btn-burger_hidden-active lg-hidden" data-trigger="toggle" data-target="#nav-box"></button>
-          <button class="btn-get-tickets">GET TICKETS</button>
+          <button class="btn-burger_hidden-active lg-hidden" aria-label="Toggle mobile menu" data-trigger="toggle"
+            data-target="#nav-box"></button>
+          <button class="btn-get-tickets" type="button" aria-label="Get tickets for the event">GET TICKETS</button>
         </div>
         <div class="header__hero">
           <h1 class="header__heading">The Best experience of <em class="c-red">music </em>in 2021</h1>
           <p class="header__info">Enjoy an unforgettable atmosphere, top DJ, live performances, and pure sound at the
             ultimate music event!</p>
           <div class="controls">
-            <button class="btn btn_accent">Get Started</button>
-            <button class="btn btn-watch-video" type="button" id="openModalBtn">
+            <button class="btn btn_accent" type="button" aria-label="Get started with the music event">Get
+              Started</button>
+            <button class="btn btn-watch-video" type="button" aria-label="Watch the event promo video"
+              id="openModalBtn">
               <svg class="icon-play" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
                 <use href="img/sprite.svg#icon-play"></use>
               </svg>Watch Video
@@ -192,8 +196,7 @@
             maximus lacus. Fusce a augue sed dolor auctor iaculis vitae id mauris. Integer ut lectus non neque suscipit
             luctus. Mauris et erat id ipsum condimentum cursus. Sed tempus enim non massa mattis iaculis. In quis massa
             risus</p>
-          <button class="btn btn_brand">
-            Learn more
+          <button class="btn btn_brand" type="button" aria-label="Learn more about music">Learn more
             <svg class="icon-arrow-up" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
               <use href="img/sprite.svg#icon-arrow-up"></use>
             </svg>
@@ -231,8 +234,7 @@
             maximus lacus. Fusce a augue sed dolor auctor iaculis vitae id mauris. Integer ut lectus non neque suscipit
             luctus. Mauris et erat id ipsum condimentum cursus. Sed tempus enim non massa mattis iaculis. In quis massa
             risus</p>
-          <button class="btn btn_brand">
-            View All Singers
+          <button class="btn btn_brand" type="button" aria-label="View all singers">View All Singers
             <svg class="icon-arrow-up" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
               <use href="img/sprite.svg#icon-arrow-up"></use>
             </svg>
@@ -551,7 +553,8 @@
               <li class="prices__info-item">Access to Wifi Router</li>
               <li class="prices__info-item">Free Food & Coffee</li>
             </ul>
-            <button class="btn btn_bordered">Get Tickets</button>
+            <button class="btn btn_bordered" type="button" aria-label="Get Free tickets for the event">Get
+              Tickets</button>
           </li>
           <li class="prices__item prices__item_standart" data-aos="fade-left" data-aos-offset="250" data-aos-delay="150"
             data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
@@ -562,7 +565,8 @@
               <li class="prices__info-item c-dark">Access to Wifi Router</li>
               <li class="prices__info-item">Free Food & Coffee</li>
             </ul>
-            <button class="btn btn_brand">Get Tickets</button>
+            <button class="btn btn_brand" type="button" aria-label="Get Standard tickets for the event">Get
+              Tickets</button>
           </li>
           <li class="prices__item prices__item_premium" data-aos="fade-left" data-aos-offset="250" data-aos-delay="200"
             data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
@@ -573,7 +577,8 @@
               <li class="prices__info-item c-dark">Access to Wifi Router</li>
               <li class="prices__info-item c-dark">Free Food & Coffee</li>
             </ul>
-            <button class="btn btn_bordered">Get Tickets</button>
+            <button class="btn btn_bordered" type="button" aria-label="Get Premium tickets for the event">Get
+              Tickets</button>
           </li>
         </ul>
       </div>
@@ -593,7 +598,7 @@
             <li class="sponsors__item"><img src="img/png/oracle.png"></li>
           </ul>
         </div>
-        <button class="btn btn_brand">Become a Sponsor</button>
+        <button class="btn btn_brand" type="button" aria-label="Become a sponsor of the event">Become a Sponsor</button>
       </div>
     </section>
     <section class="section testimonials">
@@ -822,7 +827,7 @@
               <label for="user-message">Message</label>
               <textarea id="user-message" placeholder="Message"></textarea>
             </div>
-            <button class="btn btn_brand" type="submit">Submit</button>
+            <button class="btn btn_brand" type="submit" aria-label="Submit the form with your details">Submit</button>
           </form>
         </div>
       </div>
