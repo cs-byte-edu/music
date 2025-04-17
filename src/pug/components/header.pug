@@ -29,8 +29,8 @@ header.header
             a.logo
                 img(src="@img/logo.svg")
             include nav
-            button(class = "btn-burger_hidden-active lg-hidden" data-trigger="toggle" data-target="#nav-box")
-            button.btn-get-tickets GET TICKETS
+            button(class = "btn-burger_hidden-active lg-hidden"  aria-label="Toggle mobile menu" data-trigger="toggle" data-target="#nav-box")
+            button.btn-get-tickets(type="button" aria-label="Get tickets for the event") GET TICKETS
         .header__hero
             h1.header__heading
                 | The Best experience of 
@@ -39,8 +39,8 @@ header.header
             p.header__info.
                 Enjoy an unforgettable atmosphere, top DJ, live performances, and pure sound at the ultimate music event!
             .controls 
-                button.btn.btn_accent Get Started
-                button(type="button", class="btn btn-watch-video" id="openModalBtn")
+                button.btn.btn_accent(type="button", aria-label="Get started with the music event") Get Started
+                button(type="button", aria-label="Watch the event promo video", class="btn btn-watch-video" id="openModalBtn")
                     +useSprite("icon-play", "icon-play")
                     | Watch Video
     +aria-dialog
