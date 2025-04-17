@@ -14,7 +14,6 @@ export function processPug(isDev, serverInstance) {
       .pipe(
         pug({
           locals,
-          pretty: true,
         })
       )
       .pipe(_replace(/@img\//g, "img/"))
