@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Raleway:wght@400;600&amp;display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" media="all" href="css/index.min.css">
+  <link rel="stylesheet" media="all" href="css/vendor.css">
+  <title>Music</title>
+</head>
+
+<body>
+  <div class="page-container">
+    <header class="header">
+      <picture class="header__bg">
+        <source type="image/webp" srcset="img/webp/hero-bg-1920.webp" media="(min-width: 960px)">
+        <source type="image/webp" srcset="img/webp/hero-bg-960.webp" media="(min-width: 480px)">
+        <source type="image/webp" srcset="img/webp/hero-bg-480.webp"><img
+          srcset="img/jpg/hero-bg-1920.jpg 1920w, img/jpg/hero-bg-960.jpg 960w, img/jpg/hero-bg-480.jpg 480w"
+          sizes="(min-width: 960px) 1920px, (min-width: 480px) 960px, 100vw" alt="Background image">
+      </picture>
+      <div class="container header__box">
+        <div class="header__top"><a class="logo"><img src="img/logo.svg"></a>
+          <nav class="nav-box" id="nav-box">
+            <button class="btn-close lg-hidden" data-trigger="close" data-target="#nav-box"></button>
+            <ul class="nav disclosure-nav" id="main-nav" role="list">
+              <li class="nav__item">
+                <div class="nav__item-content">
+                  <svg class="icon-tag lg-hidden" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="img/sprite.svg#icon-tag"></use>
+                  </svg><a class="nav__link" href="#">Home</a>
+                </div>
+              </li>
+              <li class="nav__item">
+                <div class="nav__item-content">
+                  <svg class="icon-ticket lg-hidden" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="img/sprite.svg#icon-ticket"></use>
+                  </svg>
+                  <button class="nav__btn" type="button" aria-expanded="true" aria-controls="ticket_menu">Tickets
+                    <svg class="icon-arrow-xs" width="16px" height="16px" viewBox="0 0 24 24" aria-hidden="true">
+                      <use href="img/sprite.svg#icon-arrow-xs"></use>
+                    </svg>
+                  </button>
+                </div>
+                <ul class="nav__submenu" id="ticket_menu">
+                  <li class="nav__submenu-item"><a class="nav__submenu-link" href="#">Buy Tickets</a></li>
+                  <li class="nav__submenu-item"><a class="nav__submenu-link" href="#">VIP &amp; Packages</a></li>
+                  <li class="nav__submenu-item"><a class="nav__submenu-link" href="#">Group Discounts</a></li>
+                  <li class="nav__submenu-item"><a class="nav__submenu-link" href="#">Refund Policy</a></li>
+                </ul>
+              </li>
+              <li class="nav__item">
+                <div class="nav__item-content">
+                  <svg class="icon-book lg-hidden" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="img/sprite.svg#icon-book"></use>
+                  </svg>
+                  <button class="nav__btn" type="button" aria-expanded="true" aria-controls="schedule_menu">Schedule
+                    <svg class="icon-arrow-xs" width="16px" height="16px" viewBox="0 0 24 24" aria-hidden="true">
+                      <use href="img/sprite.svg#icon-arrow-xs"></use>
+                    </svg>
+                  </button>
+                </div>
+                <ul class="nav__submenu" id="schedule_menu">
+                  <li class="nav__submenu-item"><a class="nav__submenu-link" href="#">Summer Festivals</a></li>
+                  <li class="nav__submenu-item"><a class="nav__submenu-link" href="#">Electronic Music</a></li>
+                  <li class="nav__submenu-item"><a class="nav__submenu-link" href="#">Festivals</a></li>
+                  <li class="nav__submenu-item"><a class="nav__submenu-link" href="#">Indie &amp; Jazz Festivals</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav__item">
+                <div class="nav__item-content">
+                  <svg class="icon-phone lg-hidden" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="img/sprite.svg#icon-phone"></use>
+                  </svg><a class="nav__link" href="#">Contacts</a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <button class="btn-burger_hidden-active lg-hidden" data-trigger="toggle" data-target="#nav-box"></button>
+          <button class="btn-get-tickets">GET TICKETS</button>
+        </div>
+        <div class="header__hero">
+          <h1 class="header__heading">The Best experience of <em class="c-red">music </em>in 2021</h1>
+          <p class="header__info">Enjoy an unforgettable atmosphere, top DJ, live performances, and pure sound at the
+            ultimate music event!</p>
+          <div class="controls">
+            <button class="btn btn_accent">Get Started</button>
+            <button class="btn btn-watch-video" type="button" id="openModalBtn">
+              <svg class="icon-play" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="img/sprite.svg#icon-play"></use>
+              </svg>Watch Video
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="dialog-backdrop" id="modalBackdrop">
+        <div class="dialog" id="myModal" role="dialog" aria-modal="true">
+          <video id="modalVideo" controls>
+            <source src="img/video.mp4" type="video/mp4">Your browser does not support the video tag
+          </video>
+          <button class="btn-close" type="button" id="closeModalBtn"></button>
+        </div>
+      </div>
+      <div class="timer" id="timer"></div>
+      <div class="header__overlay" data-trigger="close" data-target="#nav-box"></div>
+    </header>
+    <section class="section categories">
+      <h2 class="container heading-section"> <span class="c-blue">Explore </span>By Category</h2>
+      <ul class="categories__list">
+        <li class="categories__item categories__item_pop" data-aos="fade-left" data-aos-offset="100" data-aos-delay="0"
+          data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+          <div class="categories__icon-box">
+            <svg class="categories__icon icon-dj-mixer" width="24px" height="24px" viewBox="0 0 24 24"
+              aria-hidden="true">
+              <use href="img/sprite.svg#icon-dj-mixer"></use>
+            </svg>
+          </div>
+          <h3 class="categories__title categories__title">Pop</h3>
+          <p class="categories__content categories__content">Experience the thrill of pop music live — vibrant, catchy,
+            unforgettable. Get tickets now!</p>
+        </li>
+        <li class="categories__item categories__item_folk" data-aos="fade-left" data-aos-offset="100"
+          data-aos-delay="100" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="true"
+          data-aos-once="false">
+          <div class="categories__icon-box">
+            <svg class="categories__icon icon-bagpipes" width="24px" height="24px" viewBox="0 0 24 24"
+              aria-hidden="true">
+              <use href="img/sprite.svg#icon-bagpipes"></use>
+            </svg>
+          </div>
+          <h3 class="categories__title categories__title">Folk</h3>
+          <p class="categories__content categories__content">Discover the charm of folk music — rich, soulful,
+            traditional, and deeply emotional.</p>
+        </li>
+        <li class="categories__item categories__item_instrumental" data-aos="fade-left" data-aos-offset="100"
+          data-aos-delay="200" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="true"
+          data-aos-once="false">
+          <div class="categories__icon-box">
+            <svg class="categories__icon icon-saxophone" width="24px" height="24px" viewBox="0 0 24 24"
+              aria-hidden="true">
+              <use href="img/sprite.svg#icon-saxophone"></use>
+            </svg>
+          </div>
+          <h3 class="categories__title categories__title_light">Instrumental</h3>
+          <p class="categories__content categories__content_light">Immerse yourself in instrumental music — powerful,
+            melodic, expressive, and beautifully soothing.</p>
+        </li>
+        <li class="categories__item categories__item_rock" data-aos="fade-left" data-aos-offset="100"
+          data-aos-delay="300" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="true"
+          data-aos-once="false">
+          <div class="categories__icon-box">
+            <svg class="categories__icon icon-guitar" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="img/sprite.svg#icon-guitar"></use>
+            </svg>
+          </div>
+          <h3 class="categories__title categories__title">Rock</h3>
+          <p class="categories__content categories__content">Experience the raw energy of rock music — powerful,
+            rebellious, intense, and electrifying.</p>
+        </li>
+        <li class="categories__item categories__item_jazz" data-aos="fade-left" data-aos-offset="100"
+          data-aos-delay="400" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="true"
+          data-aos-once="false">
+          <div class="categories__icon-box">
+            <svg class="categories__icon icon-trumpet" width="24px" height="24px" viewBox="0 0 24 24"
+              aria-hidden="true">
+              <use href="img/sprite.svg#icon-trumpet"></use>
+            </svg>
+          </div>
+          <h3 class="categories__title categories__title">Jazz</h3>
+          <p class="categories__content categories__content">Explore the smooth elegance of jazz music — spontaneous,
+            soulful, rhythmic, and improvisational.</p>
+        </li>
+      </ul>
+    </section>
+    <section class="section about-music">
+      <div class="container about-music__content">
+        <div class="about-music__media" data-aos="fade-right" data-aos-offset="200" data-aos-delay="50"
+          data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"><img
+            class="about-music__img" src="img/jpg/about-music.jpg" alt="about music"></div>
+        <div class="about-music__info" data-aos="fade-left" data-aos-offset="200" data-aos-delay="50"
+          data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+          <h2>About <span class="c-blue">Musik</span></h2>
+          <p>Fusce justo mi, vehicula id arcu et, dapibus tristique lectus. Vivamus a elit sodales, tincidunt nunc non,
+            maximus lacus. Fusce a augue sed dolor auctor iaculis vitae id mauris. Integer ut lectus non neque suscipit
+            luctus. Mauris et erat id ipsum condimentum cursus. Sed tempus enim non massa mattis iaculis. In quis massa
+            risus</p>
+          <button class="btn btn_brand">
+            Learn more
+            <svg class="icon-arrow-up" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="img/sprite.svg#icon-arrow-up"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="section singers"><span class="confetti-triangle lg-visible"><svg xmlns="http://www.w3.org/2000/svg"
+          width="144" height="117" fill="none">
+          <path fill="#84C4FF" d="M30 17.174 144 17 86.85 117 30 17.174Z" />
+          <path stroke="#222" stroke-width="8" d="M56.857 91.928 6.875 4.163l100.226-.152-50.244 87.917Z" />
+        </svg></span>
+      <div class="container singers__content">
+        <div class="singers__media">
+          <div class="singers__box-img" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50"
+            data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"><img
+              class="singers__img singers__1" src="img/jpg/singer-top-left.jpg" alt="singer photo" width="370"
+              height="270"></div>
+          <div class="singers__box-img" data-aos="fade-up" data-aos-offset="200" data-aos-delay="150"
+            data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"><img
+              class="singers__img singers__2" src="img/jpg/singer-top-right.jpg" alt="singer photo 2" width="270"
+              height="306"></div>
+          <div class="singers__box-img" data-aos="fade-up" data-aos-offset="200" data-aos-delay="250"
+            data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"><img
+              class="singers__img singers__3" src="img/jpg/singer-bottom-left.jpg" alt="singer photo 3" width="270"
+              height="306"></div>
+          <div class="singers__box-img" data-aos="fade-up" data-aos-offset="200" data-aos-delay="350"
+            data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"><img
+              class="singers__img singers__4" src="img/jpg/singer-bottom-right.jpg" alt="singer photo 4" width="370"
+              height="306"></div>
+        </div>
+        <div class="singers__info">
+          <h2>Singers</h2>
+          <p>Fusce justo mi, vehicula id arcu et, dapibus tristique lectus. Vivamus a elit sodales, tincidunt nunc non,
+            maximus lacus. Fusce a augue sed dolor auctor iaculis vitae id mauris. Integer ut lectus non neque suscipit
+            luctus. Mauris et erat id ipsum condimentum cursus. Sed tempus enim non massa mattis iaculis. In quis massa
+            risus</p>
+          <button class="btn btn_brand">
+            View All Singers
+            <svg class="icon-arrow-up" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="img/sprite.svg#icon-arrow-up"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="section events">
+      <div class="container events__container">
+        <div class="confetti-triangle lg-visible">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="55" fill="none">
+            <path stroke="#FC5252" stroke-width="4" d="m4.005 27.635 41-23.589.07 47.3-41.07-23.711Z" />
+          </svg>
+        </div>
+        <div class="zigzag-bd lg-visible lg-visible"></div>
+        <div class="zigzag-bd zigzag-bd_rotated lg-visible"></div>
+        <div class="confetti-circle lg-visible"></div>
+        <h2>
+          Event <span class="c-blue">Schedule</span></h2>
+        <div class="events__schedule" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50"
+          data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+          <div class="events__tablist" role="tablist">
+            <button class="events__tab" id="tab-1" type="button" role="tab" aria-controls="tabpanel-1">
+              Day 01<span class="events__tab-label">16 August</span></button>
+            <button class="events__tab" id="tab-2" type="button" role="tab" aria-controls="tabpanel-2">
+              Day 02<span class="events__tab-label">17 August</span></button>
+            <button class="events__tab" id="tab-3" type="button" role="tab" aria-controls="tabpanel-3">
+              Day 03<span class="events__tab-label">18 August</span></button>
+          </div>
+          <div class="events__tabpanels">
+            <div class="events__panel" id="tabpanel-1" role="tabpanel" aria-labelledby="tab-1">
+              <table class="event-table" role="table">
+                <thead class="event-table__head" role="rowgroup">
+                  <tr class="event-table__tr" role="row">
+                    <th class="event-table__th" role="columnheader">Time</th>
+                    <th class="event-table__th" role="columnheader">Content</th>
+                    <th class="event-table__th" role="columnheader">Speakers</th>
+                    <th class="event-table__th" role="columnheader"></th>
+                  </tr>
+                </thead>
+                <tbody role="rowgroup">
+                  <tr role="row">
+                    <td class="event-table__td event-table__td_time" role="cell">11:00 AM to 12:00 PM</td>
+                    <td class="event-table__td event-table__td_content" role="cell">Vestibulum vel eros vel metus
+                      lacinia feugiat a nec metus.</td>
+                    <td class="event-table__td event-table__td_speaker" role="cell">
+                      <div class="event-table__speaker"><img class="event-table__avatar" src="img/jpg/ava-1.jpg">
+                        <div class="event-table__speaker-info">
+                          <p class="event-table__td-title">Yui Ronald</p>
+                          <p class="event-table__subtitle">Booth: <span class='label'>2F12</span></p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="event-table__td event-table__td_icon">
+                      <div class="icon-box icon-box_preview">Preview
+                        <svg class="icon-play" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                          <use href="img/sprite.svg#icon-play"></use>
+                        </svg>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr role="row">
+                    <td class="event-table__td event-table__td_time" role="cell">12:00 PM to 03:00 PM</td>
+                    <td class="event-table__td event-table__td_content" role="cell">Duis nec sodales nibh. Proin lectus
+                      tortor, rutrum vel vulputate vitae, fringilla id magna. Vestibulum ornare eget urna nec pulvinar.
+                      Praesent porttitor convallis blandit. Fusce vel egestas dolor. Donec eu augue enim. Donec rutrum
+                      non lacus ac rhoncus. Morbi quis luctus leo, nec cursus ex.</td>
+                    <td class="event-table__td event-table__td_speaker fl-col" role="cell">
+                      <div class="event-table__speaker"><img class="event-table__avatar" src="img/jpg/ava-2.jpg">
+                        <div class="event-table__speaker-info">
+                          <p class="event-table__td-title">Bob John</p>
+                          <p class="event-table__subtitle">Booth: 3G12</p>
+                        </div>
+                      </div>
+                      <div class="event-table__speaker"><img class="event-table__avatar" src="img/jpg/ava-1.jpg">
+                        <div class="event-table__speaker-info">
+                          <p class="event-table__td-title">Yui Ronald</p>
+                          <p class="event-table__subtitle">Booth: 2F12</p>
+                        </div>
+                      </div>
+                      <div class="event-table__speaker"><img class="event-table__avatar" src="img/jpg/ava-3.jpg">
+                        <div class="event-table__speaker-info">
+                          <p class="event-table__td-title">Emma Satoshi</p>
+                          <p class="event-table__subtitle">Booth: 2A35</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="event-table__td event-table__td_icon">
+                      <div class="icon-box icon-box_live">Live
+                        <svg class="icon-camera" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                          <use href="img/sprite.svg#icon-camera"></use>
+                        </svg>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr role="row">
+                    <td class="event-table__td event-table__td_time" role="cell">03:00 PM to 04:00 PM</td>
+                    <td class="event-table__td event-table__td_content" role="cell">Vestibulum vel eros vel metus
+                      lacinia feugiat a nec metus. </td>
+                    <td class="event-table__td event-table__td_speaker fl-col" role="cell">
+                      <div class="event-table__speaker"><img class="event-table__avatar" src="img/jpg/ava-4.jpg">
+                        <div class="event-table__speaker-info">
+                          <p class="event-table__td-title">Sasha Jackson</p>
+                          <p class="event-table__subtitle">Booth: 2F18</p>
+                        </div>
+                      </div>
+                      <div class="event-table__speaker"><img class="event-table__avatar" src="img/jpg/ava-5.jpg">
+                        <div class="event-table__speaker-info">
+                          <p class="event-table__td-title">Diana Brock</p>
+                          <p class="event-table__subtitle">Booth: 2F24</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="event-table__td event-table__td_icon">
+                      <div class="icon-box icon-box_upcoming">Upcoming
+                        <svg class="icon-clock" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                          <use href="img/sprite.svg#icon-clock"></use>
+                        </svg>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="events__panel" id="tabpanel-2" role="tabpanel" aria-labelledby="tab-2">
+              <table class="event-table" role="table">
+                <thead class="event-table__head" role="rowgroup">
+                  <tr class="event-table__tr" role="row">
+                    <th class="event-table__th" role="columnheader">Time</th>
+                    <th class="event-table__th" role="columnheader">Content</th>
+                    <th class="event-table__th" role="columnheader">Speakers</th>
+                    <th class="event-table__th" role="columnheader"></th>
+                  </tr>
+                </thead>
+                <tbody role="rowgroup">
+                  <tr role="row">
+                    <td class="event-table__td event-table__td_time" role="cell">12:00 PM to 03:00 PM</td>
+                    <td class="event-table__td event-table__td_content" role="cell">Duis nec sodales nibh. Proin lectus
+                      tortor, rutrum vel vulputate vitae, fringilla id magna. Vestibulum ornare eget urna nec pulvinar.
+                      Praesent porttitor convallis blandit. Fusce vel egestas dolor. Donec eu augue enim. Donec rutrum
+                      non lacus ac rhoncus. Morbi quis luctus leo, nec cursus ex.</td>
+                    <td class="event-table__td event-table__td_speaker fl-col" role="cell">
+                      <div class="event-table__speaker"><img class="event-table__avatar" src="img/jpg/ava-2.jpg">
+                        <div class="event-table__speaker-info">
+                          <p class="event-table__td-title">Bob John</p>
+                          <p class="event-table__subtitle">Booth: 3G12</p>
+                        </div>
+                      </div>
+                      <div class="event-table__speaker"><img class="event-table__avatar" src="img/jpg/ava-1.jpg">
+                        <div class="event-table__speaker-info">
+                          <p class="event-table__td-title">Yui Ronald</p>
+                          <p class="event-table__subtitle">Booth: 2F12</p>
+                        </div>
+                      </div>
+                      <div class="event-table__speaker"><img class="event-table__avatar" src="img/jpg/ava-3.jpg">
+                        <div class="event-table__speaker-info">
+                          <p class="event-table__td-title">Emma Satoshi</p>
+                          <p class="event-table__subtitle">Booth: 2A35</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="event-table__td event-table__td_icon">
+                      <div class="icon-box icon-box_live">Live
+                        <svg class="icon-camera" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                          <use href="img/sprite.svg#icon-camera"></use>
+                        </svg>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr role="row">
+                    <td class="event-table__td event-table__td_time" role="cell">03:00 PM to 04:00 PM</td>
+                    <td class="event-table__td event-table__td_content" role="cell">Vestibulum vel eros vel metus
+                      lacinia feugiat a nec metus. </td>
+                    <td class="event-table__td event-table__td_speaker fl-col" role="cell">
+                      <div class="event-table__speaker"><img class="event-table__avatar" src="img/jpg/ava-4.jpg">
+                        <div class="event-table__speaker-info">
+                          <p class="event-table__td-title">Sasha Jackson</p>
+                          <p class="event-table__subtitle">Booth: 2F18</p>
+                        </div>
+                      </div>
+                      <div class="event-table__speaker"><img class="event-table__avatar" src="img/jpg/ava-5.jpg">
+                        <div class="event-table__speaker-info">
+                          <p class="event-table__td-title">Diana Brock</p>
+                          <p class="event-table__subtitle">Booth: 2F24</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="event-table__td event-table__td_icon">
+                      <div class="icon-box icon-box_upcoming">Upcoming
+                        <svg class="icon-clock" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                          <use href="img/sprite.svg#icon-clock"></use>
+                        </svg>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr role="row">
+                    <td class="event-table__td event-table__td_time" role="cell">11:00 AM to 12:00 PM</td>
+                    <td class="event-table__td event-table__td_content" role="cell">Vestibulum vel eros vel metus
+                      lacinia feugiat a nec metus.</td>
+                    <td class="event-table__td event-table__td_speaker" role="cell">
+                      <div class="event-table__speaker"><img class="event-table__avatar" src="img/jpg/ava-1.jpg">
+                        <div class="event-table__speaker-info">
+                          <p class="event-table__td-title">Yui Ronald</p>
+                          <p class="event-table__subtitle">Booth: <span class='label'>2F12</span></p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="event-table__td event-table__td_icon">
+                      <div class="icon-box icon-box_preview">Preview
+                        <svg class="icon-play" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                          <use href="img/sprite.svg#icon-play"></use>
+                        </svg>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="events__panel" id="tabpanel-3" role="tabpanel" aria-labelledby="tab-3">
+              <table class="event-table" role="table">
+                <thead class="event-table__head" role="rowgroup">
+                  <tr class="event-table__tr" role="row">
+                    <th class="event-table__th" role="columnheader">Time</th>
+                    <th class="event-table__th" role="columnheader">Content</th>
+                    <th class="event-table__th" role="columnheader">Speakers</th>
+                    <th class="event-table__th" role="columnheader"></th>
+                  </tr>
+                </thead>
+                <tbody role="rowgroup">
+                  <tr role="row">
+                    <td class="event-table__td event-table__td_time" role="cell">11:00 AM to 12:00 PM</td>
+                    <td class="event-table__td event-table__td_content" role="cell">Vestibulum vel eros vel metus
+                      lacinia feugiat a nec metus.</td>
+                    <td class="event-table__td event-table__td_speaker" role="cell">
+                      <div class="event-table__speaker"><img class="event-table__avatar" src="img/jpg/ava-1.jpg">
+                        <div class="event-table__speaker-info">
+                          <p class="event-table__td-title">Yui Ronald</p>
+                          <p class="event-table__subtitle">Booth: <span class='label'>2F12</span></p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="event-table__td event-table__td_icon">
+                      <div class="icon-box icon-box_preview">Preview
+                        <svg class="icon-play" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                          <use href="img/sprite.svg#icon-play"></use>
+                        </svg>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr role="row">
+                    <td class="event-table__td event-table__td_time" role="cell">12:00 PM to 03:00 PM</td>
+                    <td class="event-table__td event-table__td_content" role="cell">Duis nec sodales nibh. Proin lectus
+                      tortor, rutrum vel vulputate vitae, fringilla id magna. Vestibulum ornare eget urna nec pulvinar.
+                      Praesent porttitor convallis blandit. Fusce vel egestas dolor. Donec eu augue enim. Donec rutrum
+                      non lacus ac rhoncus. Morbi quis luctus leo, nec cursus ex.</td>
+                    <td class="event-table__td event-table__td_speaker" role="cell">
+                      <div class="event-table__speaker"><img class="event-table__avatar" src="img/jpg/ava-3.jpg">
+                        <div class="event-table__speaker-info">
+                          <p class="event-table__td-title">Emma Satoshi</p>
+                          <p class="event-table__subtitle">Booth: 2A35</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="event-table__td event-table__td_icon">
+                      <div class="icon-box icon-box_live">Live
+                        <svg class="icon-camera" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                          <use href="img/sprite.svg#icon-camera"></use>
+                        </svg>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr role="row">
+                    <td class="event-table__td event-table__td_time" role="cell">03:00 PM to 04:00 PM</td>
+                    <td class="event-table__td event-table__td_content" role="cell">Vestibulum vel eros vel metus
+                      lacinia feugiat a nec metus. </td>
+                    <td class="event-table__td event-table__td_speaker fl-col" role="cell">
+                      <div class="event-table__speaker"><img class="event-table__avatar" src="img/jpg/ava-4.jpg">
+                        <div class="event-table__speaker-info">
+                          <p class="event-table__td-title">Sasha Jackson</p>
+                          <p class="event-table__subtitle">Booth: 2F18</p>
+                        </div>
+                      </div>
+                      <div class="event-table__speaker"><img class="event-table__avatar" src="img/jpg/ava-5.jpg">
+                        <div class="event-table__speaker-info">
+                          <p class="event-table__td-title">Diana Brock</p>
+                          <p class="event-table__subtitle">Booth: 2F24</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="event-table__td event-table__td_icon">
+                      <div class="icon-box icon-box_upcoming">Upcoming
+                        <svg class="icon-clock" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                          <use href="img/sprite.svg#icon-clock"></use>
+                        </svg>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section prices">
+      <div class="zigzag-bd zigzag_rotated lg-visible"></div>
+      <div class="container">
+        <h2 class="heading-section"> <span class="c-blue">Choose </span>a Tier that’s right for you</h2>
+        <ul class="prices__list">
+          <li class="prices__item prices__item_basic" data-aos="fade-left" data-aos-offset="250" data-aos-delay="50"
+            data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+            <h3 class="prices__item-heading">Basic</h3>
+            <div class="h1 prices__cost c-dark">$100</div>
+            <ul class="prices__info">
+              <li class="prices__info-item c-dark">1 Seat Available</li>
+              <li class="prices__info-item">Access to Wifi Router</li>
+              <li class="prices__info-item">Free Food & Coffee</li>
+            </ul>
+            <button class="btn btn_bordered">Get Tickets</button>
+          </li>
+          <li class="prices__item prices__item_standart" data-aos="fade-left" data-aos-offset="250" data-aos-delay="150"
+            data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+            <h3 class="prices__item-heading">Standard</h3>
+            <div class="h1 prices__cost c-blue">$150</div>
+            <ul class="prices__info">
+              <li class="prices__info-item c-dark">1 Seat Available</li>
+              <li class="prices__info-item c-dark">Access to Wifi Router</li>
+              <li class="prices__info-item">Free Food & Coffee</li>
+            </ul>
+            <button class="btn btn_brand">Get Tickets</button>
+          </li>
+          <li class="prices__item prices__item_premium" data-aos="fade-left" data-aos-offset="250" data-aos-delay="200"
+            data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+            <h3 class="prices__item-heading">Premium</h3>
+            <div class="h1 prices__cost c-red">$200</div>
+            <ul class="prices__info">
+              <li class="prices__info-item c-dark">1 Seat Available</li>
+              <li class="prices__info-item c-dark">Access to Wifi Router</li>
+              <li class="prices__info-item c-dark">Free Food & Coffee</li>
+            </ul>
+            <button class="btn btn_bordered">Get Tickets</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="section sponsors">
+      <div class="container">
+        <h2>Our Sponsors</h2>
+        <div class="logos">
+          <ul class="logos-slide">
+            <li class="sponsors__item"><img src="img/png/google.png"></li>
+            <li class="sponsors__item"><img src="img/png/microsoft.png"></li>
+            <li class="sponsors__item"><img src="img/png/airb.png"></li>
+            <li class="sponsors__item"><img src="img/png/axure.png"></li>
+            <li class="sponsors__item"><img src="img/png/apple.png"></li>
+            <li class="sponsors__item"><img src="img/png/fb.png"></li>
+            <li class="sponsors__item"><img src="img/png/nokia.png"></li>
+            <li class="sponsors__item"><img src="img/png/oracle.png"></li>
+          </ul>
+        </div>
+        <button class="btn btn_brand">Become a Sponsor</button>
+      </div>
+    </section>
+    <section class="section testimonials">
+      <h2>Testimonials</h2>
+      <div class="carousel-scroll" id="carousel-scroll">
+        <ul class="testimonials__list" id="testimonials__list">
+          <li class="testimonials__item">
+            <article class="testimonials__article">
+              <div class="testimonials__content">
+                <p class="testimonials__txt">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever since the 1500s.</p>
+              </div>
+              <div class="testimonials__author"><img class="testimonials__avatar" src="img/jpg/ava-testimonial-1.jpg"
+                  width="120" height="120" alt="user photo">
+                <div class="testimonials__name">Johnny Doe</div>
+                <div class="testimonials__link">lorem.com</div>
+              </div>
+            </article>
+          </li>
+          <li class="testimonials__item">
+            <article class="testimonials__article">
+              <div class="testimonials__content">
+                <p class="testimonials__txt">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever since the 1500s.</p>
+              </div>
+              <div class="testimonials__author"><img class="testimonials__avatar" src="img/jpg/ava-testimonial-2.jpg"
+                  width="120" height="120" alt="user photo 2">
+                <div class="testimonials__name">Johnny Doe</div>
+                <div class="testimonials__link">lorem.com</div>
+              </div>
+            </article>
+          </li>
+          <li class="testimonials__item">
+            <article class="testimonials__article">
+              <div class="testimonials__content">
+                <p class="testimonials__txt">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever since the 1500s.</p>
+              </div>
+              <div class="testimonials__author"><img class="testimonials__avatar" src="img/jpg/ava-testimonial-3.jpg"
+                  width="120" height="120" alt="user photo 3">
+                <div class="testimonials__name">Johnny Doe</div>
+                <div class="testimonials__link">lorem.com</div>
+              </div>
+            </article>
+          </li>
+          <li class="testimonials__item">
+            <article class="testimonials__article">
+              <div class="testimonials__content">
+                <p class="testimonials__txt">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever since the 1500s.</p>
+              </div>
+              <div class="testimonials__author"><img class="testimonials__avatar" src="img/jpg/ava-testimonial-1.jpg"
+                  width="120" height="120" alt="user photo">
+                <div class="testimonials__name">Johnny Doe</div>
+                <div class="testimonials__link">lorem.com</div>
+              </div>
+            </article>
+          </li>
+          <li class="testimonials__item">
+            <article class="testimonials__article">
+              <div class="testimonials__content">
+                <p class="testimonials__txt">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever since the 1500s.</p>
+              </div>
+              <div class="testimonials__author"><img class="testimonials__avatar" src="img/jpg/ava-testimonial-2.jpg"
+                  width="120" height="120" alt="user photo 2">
+                <div class="testimonials__name">Johnny Doe</div>
+                <div class="testimonials__link">lorem.com</div>
+              </div>
+            </article>
+          </li>
+          <li class="testimonials__item">
+            <article class="testimonials__article">
+              <div class="testimonials__content">
+                <p class="testimonials__txt">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever since the 1500s.</p>
+              </div>
+              <div class="testimonials__author"><img class="testimonials__avatar" src="img/jpg/ava-testimonial-3.jpg"
+                  width="120" height="120" alt="user photo 3">
+                <div class="testimonials__name">Johnny Doe</div>
+                <div class="testimonials__link">lorem.com</div>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="shots">
+      <h2 class="heading-section container">
+        See our <span class="c-blue">Best Shots</span></h2>
+      <div class="carousel">
+        <div class="carousel__box">
+          <div class="slide slide-1">
+            <div class="slide__img"><img src="img/jpg/shot-1.jpg" alt=""></div>
+            <div class="shot-info"><span class="shot-info-item">
+                <svg class="icon-chat" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="img/sprite.svg#icon-chat"></use>
+                </svg>412</span><span class="shot-info-item">
+                <svg class="icon-heart" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="img/sprite.svg#icon-heart"></use>
+                </svg>150</span></div>
+            <ul class="shot-tags">
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#music</a></li>
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#concert</a></li>
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#event</a></li>
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#dj</a></li>
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#dance</a></li>
+            </ul>
+          </div>
+          <div class="slide slide-2">
+            <div class="slide__img"><img src="img/jpg/shot-2.jpg" alt=""></div>
+            <div class="shot-info"><span class="shot-info-item">
+                <svg class="icon-chat" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="img/sprite.svg#icon-chat"></use>
+                </svg>120</span><span class="shot-info-item">
+                <svg class="icon-heart" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="img/sprite.svg#icon-heart"></use>
+                </svg>50</span></div>
+            <ul class="shot-tags">
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#technonight</a></li>
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#event</a></li>
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#edmvibe</a></li>
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#nightshift</a></li>
+            </ul>
+          </div>
+          <div class="slide slide-3">
+            <div class="slide__img"><img src="img/jpg/shot-3.jpg" alt=""></div>
+            <div class="shot-info"><span class="shot-info-item">
+                <svg class="icon-chat" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="img/sprite.svg#icon-chat"></use>
+                </svg>409</span><span class="shot-info-item">
+                <svg class="icon-heart" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="img/sprite.svg#icon-heart"></use>
+                </svg>500</span></div>
+            <ul class="shot-tags">
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#london</a></li>
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#event</a></li>
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#artist</a></li>
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#dj</a></li>
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#dance</a></li>
+            </ul>
+          </div>
+          <div class="slide slide-4">
+            <div class="slide__img"><img src="img/jpg/shot-4.jpg" alt=""></div>
+            <div class="shot-info"><span class="shot-info-item">
+                <svg class="icon-chat" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="img/sprite.svg#icon-chat"></use>
+                </svg>267</span><span class="shot-info-item">
+                <svg class="icon-heart" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="img/sprite.svg#icon-heart"></use>
+                </svg>159</span></div>
+            <ul class="shot-tags">
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#guitarhero</a></li>
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#altvibes </a></li>
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#rawsound</a></li>
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#rockanthem</a></li>
+            </ul>
+          </div>
+          <div class="slide slide-5">
+            <div class="slide__img"><img src="img/jpg/shot-5.jpg" alt=""></div>
+            <div class="shot-info"><span class="shot-info-item">
+                <svg class="icon-chat" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="img/sprite.svg#icon-chat"></use>
+                </svg>987</span><span class="shot-info-item">
+                <svg class="icon-heart" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="img/sprite.svg#icon-heart"></use>
+                </svg>100</span></div>
+            <ul class="shot-tags">
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#"></a></li>
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#rainyplaylist </a></li>
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#artist </a></li>
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#coffeetunes</a></li>
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#lofibeats</a></li>
+            </ul>
+          </div>
+          <div class="slide slide-6">
+            <div class="slide__img"><img src="img/jpg/shot-3.jpg" alt=""></div>
+            <div class="shot-info"><span class="shot-info-item">
+                <svg class="icon-chat" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="img/sprite.svg#icon-chat"></use>
+                </svg>428</span><span class="shot-info-item">
+                <svg class="icon-heart" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="img/sprite.svg#icon-heart"></use>
+                </svg>153</span></div>
+            <ul class="shot-tags">
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#music</a></li>
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#london</a></li>
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#event</a></li>
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#artist</a></li>
+              <li class="shot-tags__item"><a class="shot-tags__link" href="#">#dj</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="btn-prev">
+          <svg class="icon-prev-btn" width="32px" height="32px" viewBox="0 0 24 24" aria-hidden="true">
+            <use href="img/sprite.svg#icon-arrow-xs"></use>
+          </svg>
+        </div>
+        <div class="btn-next">
+          <svg class="icon-next-btn" width="32px" height="32px" viewBox="0 0 24 24" aria-hidden="true">
+            <use href="img/sprite.svg#icon-arrow-xs"></use>
+          </svg>
+        </div>
+      </div>
+    </section>
+    <section class="contacts">
+      <div class="contacts__right-box">
+        <div class="contacts__right">
+          <h2 class="heading-section">Fill in your details</h2>
+          <form class="contact-form" action="">
+            <div class="contact-form__row">
+              <label for="user-name">Name</label>
+              <input type="text" placeholder="Name" id="user-name">
+            </div>
+            <div class="contact-form__row">
+              <label for="user-email">Email</label>
+              <input type="email" placeholder="email@mail.com" id="user-email">
+            </div>
+            <div class="contact-form__row">
+              <label for="user-message">Message</label>
+              <textarea id="user-message" placeholder="Message"></textarea>
+            </div>
+            <button class="btn btn_brand" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="contacts__left-box">
+        <div class="contacts__left">
+          <div class="contacts__heading">
+            <h2 class="heading-section c-light">Contact us</h2>
+            <p>Have an inquiry? We’ll be happy to assist you</p>
+          </div>
+          <ul class="contacts__list" role="list">
+            <li class="contacts__list-item">
+              <svg class="icon-phone_hover" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="img/sprite.svg#icon-phone--hover"></use>
+              </svg>+92 333 6527366
+            </li>
+            <li class="contacts__list-item">
+              <svg class="icon-email_hover" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="img/sprite.svg#icon-email--hover"></use>
+              </svg>user@greelogix.com
+            </li>
+            <li class="contacts__list-item">
+              <svg class="icon-map-pin_hover" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="img/sprite.svg#icon-map-pin--hover"></use>
+              </svg>Plot 252, Block L Phase 2 Johar Town, Lahore, PK
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container"><a href="#"><img src="img/logo.svg" alt="Music logo"></a>
+        <div class="footer__bottom">
+          <ul class="footer__menu">
+            <li class="footer__menu-item"> <a>Home</a></li>
+            <li class="footer__menu-item"> <a>Company</a></li>
+            <li class="footer__menu-item"> <a>Blog</a></li>
+            <li class="footer__menu-item"> <a>Contact us</a></li>
+            <li class="footer__menu-item"> <a>sitemap</a></li>
+          </ul>
+          <ul class="footer__social">
+            <li class="footer__social-item"> <a class="footer__social-link">
+                <svg class="icon-facebook" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="img/sprite.svg#icon-facebook"></use>
+                </svg></a></li>
+            <li class="footer__social-item"> <a class="footer__social-link">
+                <svg class="icon-twitter" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="img/sprite.svg#icon-twitter"></use>
+                </svg></a></li>
+            <li class="footer__social-item"> <a class="footer__social-link">
+                <svg class="icon-linkedin" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="img/sprite.svg#icon-linkedin"></use>
+                </svg></a></li>
+            <li class="footer__social-item"> <a class="footer__social-link">
+                <svg class="icon-instagram" width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="img/sprite.svg#icon-instagram"></use>
+                </svg></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="js/index.min.js"></script>
+</body>
+
+</html>
